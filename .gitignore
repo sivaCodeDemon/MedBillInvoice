@@ -1,0 +1,17 @@
+# Java / Spring
+backend/target/
+backend/.idea/
+backend/.classpath
+backend/.project
+backend/.settings/
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

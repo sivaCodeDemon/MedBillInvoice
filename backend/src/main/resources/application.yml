@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/medbill_pro
+    username: medbill
+    password: medbill
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  security:
+    user:
+      name: admin
+      password: admin123
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+server:
+  port: 8080
+medbill:
+  jwt:
+    secret: ${JWT_SECRET:dev-local-secret-change-me}
+    expiration-ms: 3600000
+    refresh-expiration-ms: 604800000
+logging:
+  level:
+    org.springframework.security: INFO
+    org.hibernate.SQL: INFO
